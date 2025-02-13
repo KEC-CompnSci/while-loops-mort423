@@ -25,7 +25,16 @@ public class Assignment {
         // Use a while loop to build a string that repeats the word
         // Words should be separated by single spaces
         // No trailing space at the end
-        return "test";
+
+        int i = times;
+        String sentence = "";
+
+        while(i != 0){
+            sentence = sentence + " " + word;
+            i -= 1;
+        }
+
+        return sentence;
 
     
     }
@@ -44,7 +53,25 @@ public class Assignment {
         // - Outer loop for each row
         // - Inner loop to repeat the number
         // Use \n for newlines
-        return "";
+
+        StringBuilder pyramid = new StringBuilder();
+        int row = 1;
+    
+        while (row <= maxNumber) {
+            int count = 1;
+            while (count <= row) {
+                pyramid.append(row);
+                count += 1;
+            }
+            if (row < maxNumber) {
+                pyramid.append("\n");
+            }
+            row++;
+        }
+
+        String pyr = new String(pyramid);
+
+        return pyr;
     }
     
  
@@ -64,7 +91,33 @@ public class Assignment {
         // Use string concatenation
         // Numbers/words should be separated by spaces
         // No trailing space at the end
-        return "";
+
+        int j = 1;
+        String ad = "";
+        StringBuilder sentence = new StringBuilder("");
+
+        while (j != maxNumber + 1) {
+
+            if(j % 3 == 0 && j % 5 == 0){
+                ad = " FizzBuzz";
+            }
+            else if(j % 3 == 0){
+                ad = " Fizz";
+            }
+            else if (j % 5 == 0) {
+                ad = " Buzz";
+            }
+            else{
+                ad = Integer.toString(j);
+                ad = " " + ad;
+            }
+            sentence.append(ad);
+            j += 1;
+        }
+
+        String s = new String(sentence);
+
+        return s;
     }
     
   
